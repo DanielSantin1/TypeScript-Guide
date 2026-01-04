@@ -1,105 +1,116 @@
 
-//1️⃣ Objeto simples (sem interface)
-const usuario = {
-  nome: "Daniel",
-  idade: 30,
-  ativo: true
-};
+// //1️⃣ Objeto simples (sem interface)
+// const usuario = {
+//   nome: "Daniel",
+//   idade: 30,
+//   ativo: true
+// };
 
-console.log(usuario.nome);
-
-
-//2️⃣ Interface — o contrato do objeto
-interface Usuario {
-  nome: string;
-  idade: number;
-  ativo: boolean;
-}
-
-//3️⃣ Objeto tipado com interface
-const usuarioTipado: Usuario = {
-  nome: "Daniel",
-  idade: 30,
-  ativo: true
-};
-
-console.log(usuarioTipado);
-
-//4️⃣ Função recebendo objeto tipado
-function statusUsuario(usuario: Usuario): string {
-  if (usuario.ativo) {
-    return "Usuário ativo";
-  }
-  return "Usuário inativo";
-}
-
-console.log(statusUsuario(usuarioTipado));
+// console.log(usuario.nome);
 
 
-//5️⃣ Interface com mais contexto (vida real)
+// //2️⃣ Interface — o contrato do objeto
+// interface Usuario {
+//   nome: string;
+//   idade: number;
+//   ativo: boolean;
+// }
 
-//Interface
-interface Funcionario {
-  nome: string;
-  salario: number;
-  ativo: boolean;
-}
+// //3️⃣ Objeto tipado com interface
+// const usuarioTipado: Usuario = {
+//   nome: "Daniel",
+//   idade: 30,
+//   ativo: true,
+//   tipo: "ADMIN",
+//   podeExcluir: function (): boolean {
+//     throw new Error("Function not implemented.");
+//   },
+//   id: 0
+// };
 
-//Objeto
-const funcionario: Funcionario = {
-  nome: "Carlos",
-  salario: 2500,
-  ativo: true
-};
+// console.log(usuarioTipado);
 
-//Função
-function avaliarFuncionario(func: Funcionario): string {
-  if (!func.ativo) {
-    return "Funcionário inativo";
-  }
+// //4️⃣ Função recebendo objeto tipado
+// function statusUsuario(usuario: Usuario): string {
+//   if (usuario.ativo) {
+//     return "Usuário ativo";
+//   }
+//   return "Usuário inativo";
+// }
 
-  if (func.salario < 2000) {
-    return "Salário baixo";
-  }
-
-  return "Salário ok";
-}
-
-console.log(avaliarFuncionario(funcionario));
+// console.log(statusUsuario(usuarioTipado));
 
 
+// //5️⃣ Interface com mais contexto (vida real)
 
-// 🧪 Exercício 1
-// Cria uma interface Produto com:
-// nome
-// preco
-// emEstoque
-// Depois cria um objeto desse tipo.
+// //Interface
+// interface Funcionario {
+//   nome: string;
+//   salario: number;
+//   ativo: boolean;
+// }
 
-interface Produto{
-    nome: string;
-    preco: number;
-    emEstoque: boolean;
-}
+// //Objeto
+// const funcionario: Funcionario = {
+//   nome: "Carlos",
+//   salario: 2500,
+//   ativo: true,
+//   avaliarSalario: function (): string {
+//     throw new Error("Function not implemented.");
+//   },
+//   aplicarAumento: function (percentual: number): number {
+//     throw new Error("Function not implemented.");
+//   }
+// };
 
-const Produto2: Produto = {
-    nome: "Notebook",
-    preco: 3500,
-    emEstoque: true
-};
-console.log(Produto2);
+// //Função
+// function avaliarFuncionario(func: Funcionario): string {
+//   if (!func.ativo) {
+//     return "Funcionário inativo";
+//   }
 
-// 🧪 Exercício 2
-// Cria uma função que:
-// recebe um Produto
-// retorna "Disponível" ou "Indisponível"
+//   if (func.salario < 2000) {
+//     return "Salário baixo";
+//   }
 
-function ProdutoDisponivel(produto: boolean) {
-    if (produto === false) {
-        console.log('Produto Indisponível')
-    } else {
-        console.log('Produto Disponível')
-    }
-}
+//   return "Salário ok";
+// }
 
-ProdutoDisponivel(Produto2.emEstoque);
+// console.log(avaliarFuncionario(funcionario));
+
+
+
+// // 🧪 Exercício 1
+// // Cria uma interface Produto com:
+// // nome
+// // preco
+// // emEstoque
+// // Depois cria um objeto desse tipo.
+
+// interface Produto{
+//     nome: string;
+//     preco: number;
+//     emEstoque: boolean;
+// }
+
+// const Produto2: Produto = {
+//     nome: "Notebook",
+//     preco: 3500,
+//     emEstoque: true
+// };
+// console.log(Produto2);
+
+// // 🧪 Exercício 2
+// // Cria uma função que:
+// // recebe um Produto
+// // retorna "Disponível" ou "Indisponível"
+
+// function ProdutoDisponivel(produto: boolean) {
+//     if (produto === false) {
+//         console.log('Produto Indisponível')
+//     } else {
+//         console.log('Produto Disponível')
+//     }
+// }
+
+// ProdutoDisponivel(Produto2.emEstoque);

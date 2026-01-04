@@ -1,5 +1,5 @@
 // AULA 06 — ENUMS E UNION TYPES
-// Usados para controlar valores possíveis e evitar erros
+// Usados para controlar valores possíveis e evitar errors
 
 // UNION TYPE — conjunto limitado de valores
 type StatusUsuario = "ATIVO" | "INATIVO" | "BLOQUEADO";
